@@ -10,17 +10,46 @@ export class M3 {
         this.stecker = stecker;
     }
 
+    insertWheel(position, wheel) {
+
+        // check arguments are valid
+        if (wheel.constructor.name != 'Wheel') {
+            throw 'Error in M3.insertWheel: Only a Wheel instance can be inserted';
+        } else if ((position < 0) || (position >= this.wheels.length)) {
+            throw 'Error in M3.insertWheel: Wheel position does not exist'
+        }
+
+        try {
+            this.wheels[position] = wheel;
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    removeWheel(position) {
+
+        if ((position < 0) || (position >= this.wheels.length)) {
+            throw 'Error in M3.removeWheel: Wheel position does not exist'
+        }
+
+        try {
+            this.wheels[position] = null;
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
     setWheelPosition(wheel, position) {
-        return;
+
     }
 
     // this should be a private function...
     incrementWheels() {
-        return;
+
     }
 
     encipher(char) {
-        return;
+        console.log('enciphering', char);
     }
 
 };
