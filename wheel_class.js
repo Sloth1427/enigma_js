@@ -1,7 +1,8 @@
 
 export class Wheel {
 
-    constructor(wiring, turnOverNotch) {
+    constructor(name, wiring, turnOverNotch) {
+        this.name = name;
         this.wiring = wiring;
         this.turnOverNotch = turnOverNotch;
         this.outer = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
