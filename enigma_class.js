@@ -69,7 +69,6 @@ export class M3 {
         }
     }
 
-    // this should be a private function...
     incrementWheels() {
         /**
          * Rotates right-most wheel (wheels[3]) my one increment, and any
@@ -95,6 +94,10 @@ export class M3 {
     }
 
     encipher(char) {
+
+        // increment wheels before enciphering
+        this.incrementWheels();
+
         console.log('enciphering', char);
     }
 
