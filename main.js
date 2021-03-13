@@ -13,9 +13,11 @@ const wVI   = new Wheel('wVI', 'JPGVOUMFYQBENHZRDKASXLICTW', 'ZM');
 const wVII  = new Wheel('wVII', 'NZJHGRCXMYSWBOUFAIVLPEKQDT', 'ZM');
 const wVIII = new Wheel('wVIII', 'FKQHTLXOCBJSPDZRAMEWNIUYGV', 'ZM');
 
-//  UKWs do not have turnover notches. Provide empty string.
-const ukw_B = new Wheel('ukw B', 'YRUHQSLDPXNGOKMIEBFZCWVJAT', '');
-const ukw_C = new Wheel('ukw C', 'FVPJIAOYEDRZXWGCTKUQSBNMHL', '');
+// UKWs do not have turnover notches. Provide empty string.
+// Note that UKWs do not move during use, and can only be inserted in one
+// position.
+const ukw_B = new Wheel('UKW B', 'YRUHQSLDPXNGOKMIEBFZCWVJAT', '');
+const ukw_C = new Wheel('UKW C', 'FVPJIAOYEDRZXWGCTKUQSBNMHL', '');
 
 let m3 = new M3({});
 
@@ -23,6 +25,6 @@ m3.insertWheel(3, wI);
 
 console.log(m3.wheels);
 
-m3.wheels[3].setRingstellung('E');
+m3.setWheelPosition(3, 'B');
 
 console.log(m3.wheels);

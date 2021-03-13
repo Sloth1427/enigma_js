@@ -16,9 +16,9 @@ export class Wheel {
         // wiring.
 
         if (typeof ringstellung != 'string') {
-            throw `Error in setRingstellung(): Input must be a string, not ${typeof ringstellung} `;
+            throw `Error in Wheel.setRingstellung(): Input must be a string, not ${typeof ringstellung} `;
         } else if (ringstellung.length != 1){
-            throw `Error in setRingstellung(): Input string must be of length 1, not ${ringstellung.length} `;
+            throw `Error in Wheel.setRingstellung(): Input string must be of length 1, not ${ringstellung.length} `;
         }
 
         try {
