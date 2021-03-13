@@ -34,6 +34,7 @@ export class Wheel {
     rotate() {
         this.wiring = rotateString(this.wiring);
         this.outer = rotateString(this.outer);
+        // console.log(`${this.name} rotated`);
     }
 
 }

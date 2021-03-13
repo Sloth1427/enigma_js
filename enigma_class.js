@@ -71,6 +71,26 @@ export class M3 {
 
     // this should be a private function...
     incrementWheels() {
+        /**
+         * Rotates right-most wheel (wheels[3]) my one increment, and any
+         * wheels to the left if dictated by turnover notches. Note: UKWs do
+         * not rotate!
+         * 
+         * Wheels get incremented before a character is enciphered.
+         */
+
+        // the right-most wheel always rotates
+        this.wheels[3].rotate();
+
+            if (this.wheels[3].turnOverNotch.includes(this.wheels[3].outer[0])) {
+                this.wheels[2].rotate();
+                console.log('notch of wheel 3 triggered rotation of wheel 2');
+                
+                if (this.wheels[2].turnOverNotch.includes(this.wheels[2].outer[0])) {
+                    this.wheels[1].rotate();
+                    console.log('notch of wheel 2 triggered rotation of wheel 1');
+                }
+            }
 
     }
 

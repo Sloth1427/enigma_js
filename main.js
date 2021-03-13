@@ -21,10 +21,16 @@ const ukw_C = new Wheel('UKW C', 'FVPJIAOYEDRZXWGCTKUQSBNMHL', '');
 
 let m3 = new M3({});
 
-m3.insertWheel(3, wI);
+m3.insertWheel(1, wI);
+m3.insertWheel(2, wII);
+m3.insertWheel(3, wIII);
 
 console.log(m3.wheels);
 
 m3.setWheelPosition(3, 'B');
 
 console.log(m3.wheels);
+
+for (let i = 0; i < 1000; i++){
+    m3.incrementWheels();
+}
