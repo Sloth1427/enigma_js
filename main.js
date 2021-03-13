@@ -23,6 +23,6 @@ m3.insertWheel(3, wI);
 
 console.log(m3.wheels);
 
-m3.wheels[3].rotate();
+m3.wheels[3].setRingstellung('E');
 
 console.log(m3.wheels);

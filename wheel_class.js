@@ -8,8 +8,27 @@ export class Wheel {
         this.outer = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     }
 
-    setRingstellung(setRingstellung) {
-        return;
+    setRingstellung(ringstellung) {
+        // method to set the ringstellung, i.e. rotation
+        // of inner ring relative to outer. Not exactly sure how the usual notation
+        // translates to an offset, so the below is a first guess. Puts the letter
+        // specified (ringstellung) of outer to first position, without rotating
+        // wiring.
+
+        if (typeof ringstellung != 'string') {
+            throw `Error in setRingstellung(): Input must be a string, not ${typeof ringstellung} `;
+        } else if (ringstellung.length != 1){
+            throw `Error in setRingstellung(): Input string must be of length 1, not ${ringstellung.length} `;
+        }
+
+        try {
+            while (this.outer[0] != ringstellung) {
+                this.outer = rotateString(this.outer);
+            }
+        } catch(e) {
+            console.error(e);
+        }
+
     }
 
     rotate() {
