@@ -18,6 +18,8 @@ export class M3 {
         } else if ((position < 0) || (position >= this.wheels.length)) {
             throw 'Error in M3.insertWheel: Wheel position does not exist'
         }
+        // to do: add check for if wheel is already in machine
+
 
         try {
             this.wheels[position] = wheel;

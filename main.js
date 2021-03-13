@@ -19,9 +19,10 @@ const ukw_C = new Wheel('ukw C', 'FVPJIAOYEDRZXWGCTKUQSBNMHL', '');
 
 let m3 = new M3({});
 
+m3.insertWheel(3, wI);
+
 console.log(m3.wheels);
 
-// m3.insertWheel(1, 'test');
-m3.insertWheel(3, wI);
+m3.wheels[3].rotate();
 
 console.log(m3.wheels);
