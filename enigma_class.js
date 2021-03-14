@@ -7,7 +7,52 @@ export class M3 {
     
     constructor({wheels = [null, null, null, null]}, stecker = [null]) {
         this.wheels = wheels;
-        this.stecker = stecker;
+        this.steckerConnections = stecker;
+
+        this.steckerbrettDefault = {
+            'A': 'A',
+            'B': 'B',
+            'C': 'C',
+            'D': 'D',
+            'E': 'E',
+            'F': 'F',
+            'G': 'G',
+            'H': 'H',
+            'I': 'I',
+            'J': 'J',
+            'K': 'K',
+            'L': 'L',
+            'M': 'M',
+            'N': 'N',
+            'O': 'O',
+            'P': 'P',
+            'Q': 'Q',
+            'R': 'R',
+            'S': 'S',
+            'T': 'T',
+            'U': 'U',
+            'V': 'V',
+            'W': 'W',
+            'X': 'X',
+            'Y': 'Y',
+            'Z': 'Z'
+        };
+
+        this.steckerbrett = this.steckerbrettDefault;
+
+        // update the stecker dictionary
+        this.updateSteckerbrett(this.steckerConnections);
+    }
+
+    updateSteckerbrett(stecker) {
+        // check that stecker is a list of letter pairs or null
+
+        // reset if stecker = [null]
+        if (stecker == [null]) {
+            this.steckerbrett = this.steckerbrettDefault;
+        } else {
+            // for each letter pair, update the dict in both directions
+        }
     }
 
     insertWheel(position, wheel) {
