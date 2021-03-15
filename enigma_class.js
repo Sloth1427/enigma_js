@@ -5,7 +5,7 @@ export class M3 {
     // defaults, and specify any number of params on construction.
     // https://stackoverflow.com/questions/50715033/javascript-constructor-with-optional-parameters
     
-    constructor({wheels = [null, null, null, null]}, stecker = [null]) {
+    constructor({wheels = [null, null, null, null], stecker = null}) {
         this.wheels = wheels;
         this.steckerConnections = stecker;
 
@@ -47,11 +47,21 @@ export class M3 {
     updateSteckerbrett(stecker) {
         // check that stecker is a list of letter pairs or null
 
-        // reset if stecker = [null]
-        if (stecker == [null]) {
+        // reset if stecker = null
+        if (stecker == null) {
             this.steckerbrett = this.steckerbrettDefault;
         } else {
+            console.log(stecker);
             // for each letter pair, update the dict in both directions
+            for (let i = 0; i < stecker.length; i++) {
+                
+                let key1 = stecker[i][0];
+                let key2 = stecker[i][1];
+
+                this.steckerbrett[key1] = key2;
+                this.steckerbrett[key2] = key1;
+
+            }
         }
     }
 
