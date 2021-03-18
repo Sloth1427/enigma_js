@@ -19,6 +19,8 @@ const wVIII = new Wheel('wVIII', 'FKQHTLXOCBJSPDZRAMEWNIUYGV', 'ZM');
 const ukw_B = new Wheel('UKW B', 'YRUHQSLDPXNGOKMIEBFZCWVJAT', '');
 const ukw_C = new Wheel('UKW C', 'FVPJIAOYEDRZXWGCTKUQSBNMHL', '');
 
+// set up enigma machine
+
 let m3 = new M3({stecker: ['AB', 'CD']});
 
 m3.insertWheel(0, ukw_B);
@@ -26,10 +28,13 @@ m3.insertWheel(1, wI);
 m3.insertWheel(2, wII);
 m3.insertWheel(3, wIII);
 
-console.log(m3.steckerbrett);
+m3.encipher('A')
+
+
+// console.log(m3.steckerbrett);
 
 //m3.setWheelPosition(3, 'B');
-m3.incrementWheels();
+// m3.incrementWheels();
 
 // console.log(m3.wheels[3]);
 

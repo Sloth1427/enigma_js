@@ -150,10 +150,104 @@ export class M3 {
 
     encipher(char) {
 
+        const num_letter_dict = {
+            'A': 0,
+            'B': 1,
+            'C': 2,
+            'D': 3,
+            'E': 4,
+            'F': 5,
+            'G': 6,
+            'H': 7,
+            'I': 8,
+            'J': 9,
+            'K': 10,
+            'L': 11,
+            'M': 12,
+            'N': 13,
+            'O': 14,
+            'P': 15,
+            'Q': 16,
+            'R': 17,
+            'S': 18,
+            'T': 19,
+            'U': 20,
+            'V': 21,
+            'W': 22,
+            'X': 23,
+            'Y': 24,
+            'Z': 25,
+             0: 'A',
+             1: 'B',
+             2: 'C',
+             3: 'D',
+             4: 'E',
+             5: 'F',
+             6: 'G',
+             7: 'H',
+             8: 'I',
+             9: 'J',
+            10: 'K',
+            11: 'L',
+            12: 'M',
+            13: 'N',
+            14: 'O',
+            15: 'P',
+            16: 'Q',
+            17: 'R',
+            18: 'S',
+            19: 'T',
+            20: 'U',
+            21: 'V',
+            22: 'W',
+            23: 'X',
+            25: 'Y',
+            26: 'Z'
+        };
+
         // increment wheels before enciphering
         this.incrementWheels();
 
         console.log('enciphering', char);
+
+        // pass char through stecker
+        char = this.steckerbrett[char];
+        console.log(`Output of steckerbrett: ${char}`);
+    
+        // pass char through wheels[3]
+        char = this.wheels[3].wiring[num_letter_dict[char]]
+        console.log(`Output of wheels[3]: ${char}`);
+
+        // pass char through wheels[2]
+        char = this.wheels[2].wiring[num_letter_dict[char]]
+        console.log(`Output of wheels[2]: ${char}`);
+
+        // pass char through wheels[1]
+        char = this.wheels[1].wiring[num_letter_dict[char]]
+        console.log(`Output of wheels[1]: ${char}`);
+
+        // pass char through wheels[0] and back towards wheels[1]
+        char = this.wheels[0].wiring[num_letter_dict[char]]
+        console.log(`Output of UKW wheels[0]: ${char}`);
+
+        // pass char through wheels[1]
+        char = num_letter_dict[this.wheels[1].wiring.indexOf(char)]
+        console.log(`Output of wheels[1]: ${char}`);
+
+        // pass char through wheels[2]
+        char = num_letter_dict[this.wheels[2].wiring.indexOf(char)]
+        console.log(`Output of wheels[2]: ${char}`);
+
+        // pass char through wheels[3]
+        char = num_letter_dict[this.wheels[3].wiring.indexOf(char)]
+        console.log(`Output of wheels[3]: ${char}`);
+
+        // pass char through stecker
+        char = this.steckerbrett[char];
+        console.log(`Output of steckerbrett: ${char}`);
+
+
+
     }
 
 };
