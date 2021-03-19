@@ -28,7 +28,7 @@ m3.insertWheel(1, wI);
 m3.insertWheel(2, wII);
 m3.insertWheel(3, wIII);
 
-const inputMessage = "VJBDXGWS";
+const inputMessage = 'AB';
 
 console.log(inputMessage);
 
@@ -42,13 +42,4 @@ for (let i=0; i < inputMessage.length; i++) {
 
 console.log(outputMessage);
 
-// console.log(m3.steckerbrett);
 
-//m3.setWheelPosition(3, 'B');
-// m3.incrementWheels();
-
-// console.log(m3.wheels[3]);
-
-// for (let i = 0; i < 1000; i++){
-//     m3.incrementWheels();
-// }
