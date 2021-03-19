@@ -28,8 +28,19 @@ m3.insertWheel(1, wI);
 m3.insertWheel(2, wII);
 m3.insertWheel(3, wIII);
 
-m3.encipher('A')
+const inputMessage = "VJBDXGWS";
 
+console.log(inputMessage);
+
+let outputMessage = "";
+
+for (let i=0; i < inputMessage.length; i++) {
+    let char = inputMessage[i];
+    char = m3.encipher(char);
+    outputMessage = outputMessage + char;
+}
+
+console.log(outputMessage);
 
 // console.log(m3.steckerbrett);
 

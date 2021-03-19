@@ -201,8 +201,8 @@ export class M3 {
             21: 'V',
             22: 'W',
             23: 'X',
-            25: 'Y',
-            26: 'Z'
+            24: 'Y',
+            25: 'Z'
         };
 
         // increment wheels before enciphering
@@ -245,6 +245,8 @@ export class M3 {
         // pass char through stecker
         char = this.steckerbrett[char];
         console.log(`Output of steckerbrett: ${char}`);
+
+        return char;
 
 
 
